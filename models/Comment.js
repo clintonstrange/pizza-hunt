@@ -3,19 +3,18 @@ const dateFormat = require("../utils/dateFormat");
 
 const ReplySchema = new Schema(
   {
-    // set custom id to avoid confusion with parent comment's _id field
+    // set custom id to avoid confusion with parent comment _id
     replyId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
     replyBody: {
       type: String,
-      required: "You must provide text for this reply.",
-      trim: true,
+      required: true,
     },
     writtenBy: {
       type: String,
-      required: "You must provide the name of the person for this reply.",
+      required: true,
       trim: true,
     },
     createdAt: {
@@ -35,19 +34,18 @@ const CommentSchema = new Schema(
   {
     writtenBy: {
       type: String,
-      required: "You must a name for this comment.",
-      trim: true,
+      required: true,
     },
     commentBody: {
       type: String,
-      required: "You must provide text for this comment.",
-      trim: true,
+      required: true,
     },
     createdAt: {
       type: Date,
       default: Date.now,
       get: (createdAtVal) => dateFormat(createdAtVal),
     },
+    // use ReplySchema to validate data for a reply
     replies: [ReplySchema],
   },
   {
