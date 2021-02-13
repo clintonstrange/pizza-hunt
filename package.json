@@ -1,0 +1,25 @@
+{
+  "name": "pizza-hunt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "mongoose": "^5.11.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clintonstrange/pizza-hunt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clintonstrange/pizza-hunt/issues"
+  },
+  "homepage": "https://github.com/clintonstrange/pizza-hunt#readme"
+}
